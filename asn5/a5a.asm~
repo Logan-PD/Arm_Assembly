@@ -1,0 +1,110 @@
+/************************
+ * Logan Perry-Din
+ * 30070661
+ * CPSC 355 Spring 2019
+ * Assignment 5a assembly
+
+ * Contains functions to be called from main in C file.
+ * Functions are used to implement a FIFO queue data structure.
+*************************/
+
+/* Defines */
+QUEUESIZE = 8
+MODMASK = 0x7
+FALSE = 0
+TRUE = 1
+
+fp	.req	x29
+lr	.req	x30
+
+/* Global variables */
+	.bss
+queue:	.skip	QUEUESIZE * 4			// Array of uninitialize ints, 
+
+	.data
+head:	.word	-1
+tail:	.word	-1
+// .global ???
+
+
+
+/* String formats */
+queueOverFlow:	.string	"\nQueue overflow! cannot enqueue into a full queue.\n"
+
+
+
+
+
+
+	.text
+	.balign 4
+	.global enqueue
+
+/*
+ * void enqueue (int value)
+ * @param value: integer to be added to queue
+ * checks if queue is full, otherwise adds the int to the queue
+ */
+enqueue:
+	stp	fp,	lr,	[sp,-16]!
+	mov	fp,	sp
+	
+	mov	w9,	w0				// Save argument for two comparisons
+
+	bl queueFull					// First if
+	cmp	w0,	TRUE
+	b.ne	full
+
+		
+	mov	w0,	w9				// Second if
+	bl	queueEmpty
+	cmp	w0,	TRUE	
+	b.ne	notEmpty
+	
+	// head = tail = 0				// if(queueEmpty()) == true
+	adrp	x10,	head				// Load head and change it to 0
+	add	x10,	x10,	:lo12:head
+	str	wzr,	[x10]
+
+	adrp	x10,	tail
+	add	x10,	x10,	:lo12:tail
+	str	wzr,	[x10]
+	b	done					// Skip else
+
+
+notEmpty:						// if(queueEmpty()) == False
+	adrp	x10,	tail				// Load address of tail
+	add	x10,	x10,	:lo12:tail		// Load last 12 bits of tail, that was used for address
+	ldr	w11,	[x10]				// Load value of address
+
+	add	w11,	w11,	1			// ++tail
+	and	w11,	w11,	MODMASK			// tail & MODMASk
+	
+	str	w11,	[x10]
+	
+	b	done
+
+full:
+	ldr	x0,	=queueOverFlow
+	bl	printf
+
+done:
+	adrp	x12,	queue
+	add	x12,	x12,	:lo12:queue
+	str	w9,	[x12,w11,sxtw 2]		
+	
+	ldr	fp,	lr,	[sp],	16
+	ret
+
+
+
+
+
+queueFull:
+	stp	fp,	lr,	[sp,-16]!
+	mov	fp,	sp
+
+	
+	
+
+

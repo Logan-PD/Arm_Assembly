@@ -1,0 +1,6 @@
+a5a and a5aMain:
+Contains functions to be called from main in C file. Functions are used to implement a FIFO queue data structure.
+
+a5b:
+Generates output message displaying the entered month and day formatted into a string with appropriate 
+suffix, as well as the season.

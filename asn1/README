@@ -1,0 +1,4 @@
+Finds max of y= -5x^3 - 31x^2 + 4x + 31
+ in the interval -6 <= x <= 5
+ 
+ version 'a' has no macros, version 'b' does.

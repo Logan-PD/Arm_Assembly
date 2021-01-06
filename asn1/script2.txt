@@ -1,0 +1,67 @@
+Script started on 2019-05-17 20:10:26-06:00
+]0;logan.perrydin@csa2:~/Desktop/cpsc355/asn1logan.perrydin@csa2:~/Desktop/cpsc355/asn1$ gdb assign1b
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign1b...done.
+(gdb) b updateYMax
+Breakpoint 1 at 0x4005fc: file assign1b.s, line 57.
+(gdb) r
+Starting program: /home/ugb/logan.perrydin/Desktop/cpsc355/asn1/assign1b 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, updateYMax () at assign1b.s:57
+57		cmp	x21,	x20						// if computed y value is greater than last y
+(gdb) p/d $x21
+$1 = -29
+(gdb) delete
+Delete all breakpoints? (y or n) y
+(gdb) c
+Continuing.
+For x = -6, y = -29.
+Current maximum is y = -29
+For x = -5, y = -139.
+Current maximum is y = -29
+For x = -4, y = -161.
+Current maximum is y = -29
+For x = -3, y = -125.
+Current maximum is y = -29
+For x = -2, y = -61.
+Current maximum is y = -29
+For x = -1, y = 1.
+Current maximum is y = 1
+For x = 0, y = 31.
+Current maximum is y = 31
+For x = 1, y = -1.
+Current maximum is y = 31
+For x = 2, y = -125.
+Current maximum is y = 31
+For x = 3, y = -371.
+Current maximum is y = 31
+For x = 4, y = -769.
+Current maximum is y = 31
+For x = 5, y = -1349.
+Current maximum is y = 31
+[Inferior 1 (process 6754) exited with code 060]
+(gdb) q
+]0;logan.perrydin@csa2:~/Desktop/cpsc355/asn1logan.perrydin@csa2:~/Desktop/cpsc355/asn1$ exit
+exit
+
+Script done on 2019-05-17 20:11:23-06:00

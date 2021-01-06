@@ -1,0 +1,240 @@
+Script started on 2019-05-17 19:33:54-06:00
+]0;logan.perrydin@csa2:~/Desktop/cpsc355/asn1logan.perrydin@csa2:~/Desktop/cpsc355/asn1$ gdb assign1a
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign1a...(no debugging symbols found)...done.
+(gdb) display/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) b test
+Breakpoint 1 at 0x4005d4
+(gdb) r
+Starting program: /home/ugb/logan.perrydin/Desktop/cpsc355/asn1/assign1a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) p/d $x19
+$1 = -6
+(gdb) ni
+0x00000000004005d8 in test ()
+1: x/i $pc
+=> 0x4005d8 <test+4>:	b.gt	0x400638 <done>
+(gdb) ni
+0x00000000004005dc in calc ()
+1: x/i $pc
+=> 0x4005dc <calc>:	mul	x21, x19, x19
+(gdb) ni
+0x00000000004005e0 in calc ()
+1: x/i $pc
+=> 0x4005e0 <calc+4>:	mul	x21, x19, x21
+(gdb) ni
+0x00000000004005e4 in calc ()
+1: x/i $pc
+=> 0x4005e4 <calc+8>:	mov	x22, #0xfffffffffffffffb    	// #-5
+(gdb) ni
+0x00000000004005e8 in calc ()
+1: x/i $pc
+=> 0x4005e8 <calc+12>:	mul	x21, x21, x22
+(gdb) ni
+0x00000000004005ec in calc ()
+1: x/i $pc
+=> 0x4005ec <calc+16>:	mul	x22, x19, x19
+(gdb) ni
+0x00000000004005f0 in calc ()
+1: x/i $pc
+=> 0x4005f0 <calc+20>:	mov	x23, #0xffffffffffffffe1    	// #-31
+(gdb) ni
+0x00000000004005f4 in calc ()
+1: x/i $pc
+=> 0x4005f4 <calc+24>:	mul	x22, x22, x23
+(gdb) ni
+0x00000000004005f8 in calc ()
+1: x/i $pc
+=> 0x4005f8 <calc+28>:	mov	x23, #0x4                   	// #4
+(gdb) ni
+0x00000000004005fc in calc ()
+1: x/i $pc
+=> 0x4005fc <calc+32>:	mul	x23, x23, x19
+(gdb) ni
+0x0000000000400600 in calc ()
+1: x/i $pc
+=> 0x400600 <calc+36>:	add	x24, x21, x22
+(gdb) ni
+0x0000000000400604 in calc ()
+1: x/i $pc
+=> 0x400604 <calc+40>:	add	x24, x24, x23
+(gdb) ni
+0x0000000000400608 in calc ()
+1: x/i $pc
+=> 0x400608 <calc+44>:	add	x24, x24, #0x1f
+(gdb) ni
+0x000000000040060c in updateYMAx ()
+1: x/i $pc
+=> 0x40060c <updateYMAx>:	cmp	x24, x20
+(gdb) p/d $x24
+$2 = -29
+(gdb) p/d $x24[C[C[C[C[C[Cni[K
+0x0000000000400610 in updateYMAx ()
+1: x/i $pc
+=> 0x400610 <updateYMAx+4>:	b.le	0x400618 <display>
+(gdb) ni
+0x0000000000400614 in updateYMAx ()
+1: x/i $pc
+=> 0x400614 <updateYMAx+8>:	mov	x20, x24
+(gdb) ni
+0x0000000000400618 in display ()
+1: x/i $pc
+=> 0x400618 <display>:	adrp	x0, 0x400000
+(gdb) p/d $x20
+$3 = -29
+(gdb) ni
+0x000000000040061c in display ()
+1: x/i $pc
+=> 0x40061c <display+4>:	add	x0, x0, #0x594
+(gdb) ni
+0x0000000000400620 in display ()
+1: x/i $pc
+=> 0x400620 <display+8>:	mov	x1, x19
+(gdb) ni
+0x0000000000400624 in display ()
+1: x/i $pc
+=> 0x400624 <display+12>:	mov	x2, x24
+(gdb) ni
+0x0000000000400628 in display ()
+1: x/i $pc
+=> 0x400628 <display+16>:	mov	x3, x20
+(gdb) ni
+0x000000000040062c in display ()
+1: x/i $pc
+=> 0x40062c <display+20>:	bl	0x400480 <printf@plt>
+(gdb) ni
+For x = -6, y = -29.
+Current maximum is y = -29
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) ni
+0x00000000004005d8 in test ()
+1: x/i $pc
+=> 0x4005d8 <test+4>:	b.gt	0x400638 <done>
+(gdb) p/d $x19
+$4 = -5
+(gdb) c
+Continuing.
+For x = -5, y = -139.
+Current maximum is y = -29
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = -4, y = -161.
+Current maximum is y = -29
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = -3, y = -125.
+Current maximum is y = -29
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = -2, y = -61.
+Current maximum is y = -29
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = -1, y = 1.
+Current maximum is y = 1
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 0, y = 31.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 1, y = -1.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 2, y = -125.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 3, y = -371.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 4, y = -769.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+For x = 5, y = -1349.
+Current maximum is y = 31
+
+Breakpoint 1, 0x00000000004005d4 in test ()
+1: x/i $pc
+=> 0x4005d4 <test>:	cmp	x19, #0x5
+(gdb) c
+Continuing.
+[Inferior 1 (process 5677) exited with code 060]
+(gdb) c
+The program is not being run.
+(gdb) q
+]0;logan.perrydin@csa2:~/Desktop/cpsc355/asn1logan.perrydin@csa2:~/Desktop/cpsc355/asn1$ exitt[K
+exit
+
+Script done on 2019-05-17 19:37:40-06:00

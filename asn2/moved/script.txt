@@ -1,0 +1,293 @@
+Script started on 2019-05-26 17:11:55-06:00
+]0;logan.perrydin@csa3:~/Desktop/cpsc355/asn2logan.perrydin@csa3:~/Desktop/cpsc355/asn2$ gdb assign2a.[K
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign2a...done.
+(gdb) display/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) b loop
+Breakpoint 1 at 0x40065c: file assign2a.s, line 82.
+(gdb) b notNeg
+Breakpoint 2 at 0x40069c: file assign2a.s, line 112.
+(gdb) r
+Starting program: /home/ugb/logan.perrydin/Desktop/cpsc355/asn2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70) multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) p/t $w19
+$1 = 1000110
+(gdb) p/t $w20
+$2 = 11111110111111101111111011111110
+(gdb) p/t $w21
+$3 = 0
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) p/t $w19
+$4 = 100011
+(gdb) p/t $w20
+$5 = 11111110111111101111111011111110
+(gdb) p/t $w201920[K1
+$6 = 0
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, loop () at assign2a.s:82
+82		tst	w19,	0x1				// Test if bit-0 of w19 is 1 or 0, if(w19 & 0x1)
+1: x/i $pc
+=> 0x40065c <loop>:	tst	w19, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 2, notNeg () at assign2a.s:112
+112		ldr	x0,	=fmt_pro_mult			// Load address of string format
+1: x/i $pc
+=> 0x40069c <notNeg>:	ldr	x0, 0x4006e8 <done+20>
+(gdb) c[Kp/t $w19
+$7 = 10111001101110011011100101110100
+(gdb) p/t $w20
+$8 = 11111110111111101111111011111110
+(gdb) p/t $w21
+$9 = 11111111111111111111111111111111
+(gdb) c
+Continuing.
+product = 0xffffffff multiplier = 0xb9b9b974
+
+64-bit x24 = 0xffffffffb9b9b974 (-1179010700)
+[Inferior 1 (process 32111) exited with code 056]
+(gdb) q
+]0;logan.perrydin@csa3:~/Desktop/cpsc355/asn2logan.perrydin@csa3:~/Desktop/cpsc355/asn2$ exit
+exit
+
+Script done on 2019-05-26 17:16:41-06:00
